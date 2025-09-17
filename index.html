@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>HyFlowSE: Hybrid End-to-End Flow-Matching Speech Enhancement via Generative–Discriminative Learning</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
+    <script>
+        window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], }, chtml: { scale: 0.8 }};
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'></script>    
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>HyFlowSE: Hybrid End-to-End Flow-Matching Speech Enhancement via Generative–Discriminative Learning <small class="color_fade">Online Supplement</small>
+            </h1>
+        </header>
+
+        <h4> Authors </h4>
+        <div style="font-size: medium;"> Yang Zhang, Wenbin Jiang, Zhen Wang, KaiYing Wu, Wen Zhang, and Fei Wen </div>
+        <h4> Abstract </h4>
+        <div style="font-size: medium;"> 
+            Generative speech enhancement (SE) methods, typically implemented with diffusion or flow matching, exhibit strong generalization to unseen acoustic conditions. However, they often underperform discriminative approaches in matched, in-domain settings. Recent attempts to close this gap have relied on pretrained discriminative models or cascaded multi-flow architectures, which add inference steps and increase computational cost. To address these limitations, we propose HyFlowSE, a flow matching SE framework with hybrid generative–discriminative learning. HyFlowSE leverages neural ordinary differential equations (ODEs) for end-to-end training and jointly optimizes generative and discriminative objectives within a single model. Experiments on popular benchmark datasets show that HyFlowSE, with only 5.2 M parameters, outperforms other generative SE methods across nearly all evaluation metrics, with especially pronounced gains at low signal-to-noise ratios.    </br>
+        <h4> Datasets </h4>
+        <div style="font-size: medium;">
+            <li>The <a href="https://datashare.ed.ac.uk/handle/10283/2791"> VoiceBank+DEMAND </a> dataset is used for demo. </li>
+            <li> Audio samples of the test set we processed are available at the repository (<a href="https://github.com/ZhangYang77/HyFlowSE/tree/main/samples/voicebank">voicebank</a>).</li>
+        </div>
+        <h4> Compared methods </h4>
+        <div style="font-size: medium;">
+            <li><a href=" https://github.com/seongq/flowmse">FlowSE: Flow matching based speech enhancement</a></li>
+            <li><a href=" https://github.com/seongq/cascadingtwoflowmatching">CTFSE: Speech enhancement based on cascaded two flows</a></li>
+        </div>
+    </br>
+        <h4> Audio Samples </h4>
+        <!-- <hr class="hr_line"> -->
+        <!-- <h3>VoiceBank+DEMAND</h3> -->
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>Model\id(noise)</th>
+                    <th>p257_008(cafe)</th>
+                    <th>p257_033(living)</th>
+                    <th>p257_106(bus)</th>
+                    <th>p232_250(office)</th>
+                    <th>p232_409(psquare)</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr> <td> Clean </td>
+                <td><audio controls=""><source src="samples/Clean/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Clean/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Clean/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Clean/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Clean/p232_409.wav"></audio></td>
+                </tr>
+                <tr> <td> Noisy </td>
+                <td><audio controls=""><source src="samples/Noisy/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Noisy/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Noisy/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Noisy/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/Noisy/p232_409.wav"></audio></td>
+                </tr>
+                <tr> <td> FlowSE </td>
+                <td><audio controls=""><source src="samples/FlowSE/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/FlowSE/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/FlowSE/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/FlowSE/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/FlowSE/p232_409.wav"></audio></td>
+                </tr>
+                <tr> <td> CTFSE </td>
+                <td><audio controls=""><source src="samples/CTFSE/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/CTFSE/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/CTFSE/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/CTFSE/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/CTFSE/p232_409.wav"></audio></td>
+                </tr>
+                <tr> <td> HyFlowSE </td>
+                <td><audio controls=""><source src="samples/HyFlowSE/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE/p232_409.wav"></audio></td>
+                </tr>
+                <tr> <td> HyFlowSE(M)$ </td>
+                <td><audio controls=""><source src="samples/HyFlowSE_M/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_M/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_M/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_M/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_M/p232_409.wav"></audio></td>
+                </tr>
+                <tr> <td> HyFlowSE(S)$ </td>
+                <td><audio controls=""><source src="samples/HyFlowSE_S/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_S/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_S/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_S/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_S/p232_409.wav"></audio></td>
+                </tr>
+                <tr> <td> HyFlowSE(T)$ </td>
+                <td><audio controls=""><source src="samples/HyFlowSE_T/p257_008.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_T/p257_033.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_T/p257_106.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_T/p232_250.wav"></audio></td>
+                <td><audio controls=""><source src="samples/HyFlowSE_T/p232_409.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <div style="font-size: medium;" class="color_fade"> Note: the audio samples of the original NyTT paper are not publicly available.</div> -->
+        <h4>Spectrogram of the samples in last column</h4>
+        <img src="img/p232_409.png" class="container">
+    </br>    
+        <div class="row"> &nbsp; </div> <br/>
+
+    </div>
+</body>

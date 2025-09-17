@@ -1,0 +1,40 @@
+.hr_line {
+    height:1px;
+    border:none;
+    border-top:1px solid #666666; 
+    width:100%;
+}
+
+.color_fade {
+    color: #888888;
+}
+
+.center{
+    text-align:center;
+}
+
+audio{
+  width: 180px; 
+  /* height: 60px; */
+}
+
+
+.table thead tr th{  
+  text-align: center;
+}
+
+.table tbody tr td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+h1{font-size:30px}
+
+
+.mytable{
+  margin-bottom: 5px;
+}
+
+.mytable>tbody>tr>td{
+  border: 0px;
+}
